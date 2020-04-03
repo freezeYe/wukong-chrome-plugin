@@ -2,11 +2,12 @@
   "name": "Getting Started Example",
   "version": "1.0",
   "description": "Build an Extension!",
-  "permissions": ["storage", "declarativeContent"],
+  "permissions": ["storage", "declarativeContent", "activeTab"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
+  "options_page": "options.html",
   "page_action": {
     "default_popup": "popup.html",
     "default_icon": {
