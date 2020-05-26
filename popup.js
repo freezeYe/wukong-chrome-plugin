@@ -1,4 +1,5 @@
 let changeColor = document.getElementById('changeColor');
+let jump = document.getElementById('jump')
 
 chrome.storage.sync.get('color', function(data) {
   changeColor.style.backgroundColor = data.color;
@@ -14,3 +15,10 @@ chrome.storage.sync.get('color', function(data) {
     });
   };
 });
+
+jump.onclick = function() {
+  chrome.tabs.query({'active': true}, function(tabs) {
+    console.log(tabs)
+    chrome.tabs.update(tabs[0].id, {url: 'http://www.baidu.com'});
+  });
+}
