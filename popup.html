@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="utf-8">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
-      button {
-        height: 30px;
-        width: 30px;
-        outline: none;
+      .list-container {
+        display: flex;
+        width: 400px;
+        height: 400px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      ul li {
+        list-style-type:none;
+      }
+      .list-host {
+        flex-grow: 1;
+        overflow: auto;
+      }
+      .list-query {
+        flex-grow: 1;
+        overflow: auto;
+      }
+      .division {
+        margin: 0 10px;
+        height: 100%;
+        width: 1px;
+        background-color: gray;
       }
     </style>
   </head>
   <body>
-    <button id="changeColor"></button>
-    <button id="jump"></button>
+    <button>新增</button>
+    <div class="list-container">
+     
+      <div class="list-host">
+        <ul>
+          <li>
+            <label>一级页-疫情</label>
+            <input type="radio" name="host" value="www.baidu.com"/>
+          </li>
+        </ul>
+      </div>
+      <div class="division"></div>
+      <div class="list-query">
+        <ul>
+          <li>
+            <label>测试</label>
+            <input type="radio" name="query" value="ab=1"/>
+          </li>
+        </ul>
+      </div>
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>

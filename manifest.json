@@ -1,14 +1,14 @@
 {
-  "name": "超链组装器",
+  "name": "loader",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "超链接path和params记录器，让访问更简单!",
+  "description": "超链奥特曼",
   "permissions": ["storage", "declarativeContent", "activeTab"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
-  "page_action": {
+  "browser_action": {
     "default_popup": "popup.html",
     "default_icon": "images/nokia_suite_mirror.png"
   },
