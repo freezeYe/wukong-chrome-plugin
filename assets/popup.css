@@ -1,6 +1,23 @@
-html .default {
-  background-color: #eee;
+body {
+  margin: 0;
 }
 .app {
   min-width: 18em;
+  color: #000;
+  font-size: 12px;
+}
+.container {
+  width: 100%;
+  font-size: 14px;
+}
+
+.container .item {
+  cursor: default;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+}
+.container .item:hover {
+  background-color: #eee;
+  
 }
