@@ -2,57 +2,19 @@
 <html lang="utf-8">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      .list-container {
-        display: flex;
-        width: 400px;
-        height: 400px;
-      }
-      ul {
-        margin: 0;
-        padding: 0;
-      }
-      ul li {
-        list-style-type:none;
-      }
-      .list-host {
-        flex-grow: 1;
-        overflow: auto;
-      }
-      .list-query {
-        flex-grow: 1;
-        overflow: auto;
-      }
-      .division {
-        margin: 0 10px;
-        height: 100%;
-        width: 1px;
-        background-color: gray;
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/popup.css">
   </head>
   <body>
-    <button>新增</button>
-    <div class="list-container">
-     
-      <div class="list-host">
-        <ul>
-          <li>
-            <label>一级页-疫情</label>
-            <input type="radio" name="host" value="www.baidu.com"/>
-          </li>
-        </ul>
-      </div>
-      <div class="division"></div>
-      <div class="list-query">
-        <ul>
-          <li>
-            <label>测试</label>
-            <input type="radio" name="query" value="ab=1"/>
-          </li>
-        </ul>
-      </div>
+    <div class="app">
+      <table>
+        <tr>
+          <div id="record">添加此页</div>
+        </tr>
+        <tr>
+          <div id="load">加载记录</div>
+        </tr>
+      </table>
     </div>
-    <script src="popup.js"></script>
+    <script src="./assets/popup.js"></script>
   </body>
 </html>

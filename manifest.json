@@ -1,8 +1,8 @@
 {
-  "name": "loader",
+  "name": "Domain and Parameter combination",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "超链奥特曼",
+  "description": "Separate Domains and Parameters and Regroup",
   "permissions": ["storage", "declarativeContent", "activeTab"],
   "background": {
     "scripts": ["background.js"],
@@ -11,6 +11,12 @@
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": "images/nokia_suite_mirror.png"
+  },
+  "icons": {
+    "16": "images/nokia_suite_mirror.png",
+    "32": "images/nokia_suite_mirror.png",
+    "48": "images/nokia_suite_mirror.png",
+    "128": "images/nokia_suite_mirror.png"
   },
   "options_page": "options.html"
 }
