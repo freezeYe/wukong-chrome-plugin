@@ -2,6 +2,7 @@
   "name": "Domain and Parameter combination",
   "version": "1.0",
   "manifest_version": 2,
+  "author": "bohrzhang",
   "description": "Separate Domains and Parameters and Regroup",
   "permissions": ["storage", "declarativeContent", "activeTab"],
   "background": {
