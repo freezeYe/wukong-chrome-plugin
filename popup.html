@@ -6,24 +6,33 @@
   </head>
   <body>
     <div class="app">
-      <div class="operation">
-        <div id="record" class="item">
-          <i class="td-icon"></i>
-          <span>添加记录</span>
-        </div>
-        <div id="load" class="item">
-          <i class="td-icon"></i>
-          <span>重载页面</span>
-        </div>
-      </div>
       <div class="custom-form">
         <form id="form">
-          <input type="text" name="hostName" autofocus></input>
-          <input type="text" name="paramName"></input>
-          <button id="add-btn">添加</button>
+          <div class="form-item">
+            <span>host: </span>
+            <input autocomplete="off" type="text" name="hostValue" autofocus></input>
+          </div>
+          <div class="form-item">
+            <span>path: </span>
+            <input autocomplete="off" type="text" name="pathValue"></input>
+          </div>
+          <div class="form-item">
+            <span>query: </span>
+            <input autocomplete="off" type="text" name="queryValue"></input>
+          </div>
         </form>
       </div>
+      <div class="operation">
+        <div id="add-btn" class="button add-btn">保存链接</div>
+        <div id="load-btn" class="button load-btn">加载记录</div>
+      </div>
     </div>
+    <footer class="footer">
+      <div id="autoOption"></div>
+      © <span id="year">2020</span> tnfe -
+        <a class="gtx-a" id="options-link" target="_blank" href="options.html">扩展程序选项</a> -
+        <a class="gtx-a" id="translate-link" target="_blank" href="">腾讯新闻</a>
+    </footer>
     <script src="./assets/popup.js"></script>
   </body>
 </html>
