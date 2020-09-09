@@ -1,0 +1,21 @@
+{
+  "name": "chrome-app-recoder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.code.oa.com/efficiency-plugin/chrome-app-recoder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tencent/eslint-config-tencent": "^0.7.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.8.1"
+  }
+}
