@@ -26,6 +26,10 @@ body {
   flex-grow: 1;
 }
 
+.link-show {
+  color: grey;
+}
+
 .button {
   display: inline-block;
   border-radius: 2px;
