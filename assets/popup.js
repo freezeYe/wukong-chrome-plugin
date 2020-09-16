@@ -20,19 +20,31 @@ const init = () => {
   });
 
   addBtn.addEventListener('click', () => {
+    // 命名字段
     const hostName = form.hostValue.value;
     const pathName = form.pathValue.value;
     const queryName = form.queryValue.value;
-    const [host, query] = link.split('?');
-    const content = { host, query };
 
-    chrome.storage.sync.get(['wukongCache'], (result) => {
-      console.log(`Value currently is ${result.key}`);
+    // 链接字段值
+    const [href, query = ''] = link.split('?');
+    const args = href.split('/')
+    const host = args.slice(0, 3).join('/')
+    const path = args.slice(3).join('/')
+
+    // 存储key
+    const key = '__wukongCache'
+    chrome.storage.sync.get([key], (result) => {
+      const json = result[key] || {}
+      const {hostMap = {}, pathMap = {}, queryMap = {}} = json
+      hostMap[host] = hostName
+      pathMap[path] = pathName
+      queryMap[query] = queryName
+
+      json.hostMap = hostMap
+      json.pathMap = pathMap
+      json.queryMap = queryMap
+      chrome.storage.sync.set({[key]: json})
     });
-
-    // chrome.storage.sync.set({key: value}, function() {
-    //   console.log('Value is set to ' + value);
-    // });
   });
 };
 
