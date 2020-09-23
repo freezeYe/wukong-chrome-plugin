@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+
+.container_header {
+  display: block;
+  position: relative;
+  height: 80px;
+  color: #fff;
+  min-width: 1000px;
+  padding-left: 40px;
+  display: flex;
+  align-items: center;
+  background-color: #3c7ff1;
+}
+
+.header_title {
+  margin: 0 0 0 16px;
+}
+.header_logo {
+  height: 60px;
+}
