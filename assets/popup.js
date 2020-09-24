@@ -4,7 +4,9 @@ const addBtn = document.getElementById('add-btn');
 const form = document.getElementById('form');
 const linkp = document.getElementById('link-show');
 const reminder = document.getElementById('reminder');
+const loadContainer = document.getElementById('load-container');
 
+// 项目初始化，绑定相关事件
 const init = () => {
   let link = '';
   chrome.tabs.query({ active: true }, (tabs) => {
@@ -15,11 +17,7 @@ const init = () => {
     linkp.innerText = url;
   });
 
-  loadBtn.addEventListener('click', () => {
-    const optionPage = chrome.runtime.getURL('options.html');
-    window.open(optionPage);
-  });
-
+  loadBtn.addEventListener('click', loadStored);
   addBtn.addEventListener('click', () => {
     // 命名字段
     const hostName = form.hostValue.value;
@@ -44,9 +42,9 @@ const init = () => {
     chrome.storage.sync.get([key], (result) => {
       const json = result[key] || {};
       const { hostMap = {}, pathMap = {}, queryMap = {} } = json;
-      hostMap[host] = hostName;
-      pathMap[path] = pathName;
-      queryMap[query] = queryName;
+      if (hostName) hostMap[host] = hostName;
+      if (pathName) pathMap[path] = pathName;
+      if (queryName) queryMap[query] = queryName;
 
       json.hostMap = hostMap;
       json.pathMap = pathMap;
@@ -61,5 +59,34 @@ const init = () => {
     });
   });
 };
+
+// 加载记录列表
+function loadStored() {
+  chrome.storage.sync.get(['__wukongCache'], (result) => {
+    const hostContainer = document.getElementById('host-list')
+    const pathContainer = document.getElementById('path-list')
+    const queryContainer = document.getElementById('query-list')
+    const {__wukongCache = {}} = result
+    const {hostMap, pathMap, queryMap} = __wukongCache
+    let hostHtml = ''
+    let pathHtml = ''
+    let queryHtml = ''
+    Object.keys(hostMap).forEach(hostKey => {
+      hostHtml += `<li>${hostMap[hostKey]}</li>`
+    })
+    Object.keys(pathMap).forEach(pathKey => {
+      pathHtml += `<li>${pathMap[pathKey]}</li>`
+    })
+    Object.keys(queryMap).forEach(querykey => {
+      queryHtml += `<li>${queryMap[querykey]}</li>`
+    })
+    hostContainer.innerHTML = hostHtml
+    pathContainer.innerHTML = pathHtml
+    queryContainer.innerHTML = queryHtml
+
+    form.style.display = 'none'
+    loadContainer.style.display = "flex"
+  })
+}
 
 init();

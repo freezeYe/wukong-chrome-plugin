@@ -5,10 +5,6 @@
   "author": "bohrzhang",
   "description": "Separate Domains and Parameters and Regroup",
   "permissions": ["storage", "declarativeContent", "activeTab", "tabs"],
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": "images/nokia_suite_mirror.png"

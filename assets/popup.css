@@ -68,6 +68,19 @@ body {
   display: none;
 }
 
+.load-container {
+  display: none;
+  margin-bottom: 10px;
+}
+
+.list {
+  min-height: 100px;
+  max-height: 220px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: auto;
+}
+
 .footer {
   background-color: #f0f0f0;
   color: #636363;
