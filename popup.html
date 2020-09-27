@@ -2,7 +2,7 @@
 <html lang="utf-8">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="./assets/popup.css">
+    <link rel="stylesheet" href="./static/popup.css">
   </head>
   <body>
     <div class="app">
@@ -24,14 +24,14 @@
         </form>
       </div>
       <div class="load-container" id="load-container">
-        <div id="host-list" class="list"></div>
-        <div id="path-list" class="list"></div>
-        <div id="query-list" class="list"></div>
+        <ul id="host-list" class="list"></ul>
+        <ul id="path-list" class="list"></ul>
+        <ul id="query-list" class="list"></ul>
       </div>
       <div id="reminder" class="remind"></div>
       <div class="operation">
-        <div id="add-btn" class="button add-btn">保存链接</div>
-        <div id="load-btn" class="button load-btn">加载记录</div>
+        <div id="add-btn" class="button add-btn">保存</div>
+        <div id="load-btn" class="button load-btn">访问</div>
       </div>
     </div>
     <footer class="footer">
@@ -40,6 +40,6 @@
         <a class="gtx-a" id="options-link" target="_blank" href="options.html">扩展程序选项</a> -
         <a class="gtx-a" id="translate-link" target="_blank" href="https://github.com/tnfe">腾讯新闻</a>
     </footer>
-    <script src="./assets/popup.js"></script>
+    <script src="./static/popup.js"></script>
   </body>
 </html>
