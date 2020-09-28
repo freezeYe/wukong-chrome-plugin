@@ -117,6 +117,7 @@ function initInSavePage() {
   addBtn.innerText = '保存';
   form.style.display = 'block';
   loadContainer.style.display = 'none';
+  linkp.style.display = 'block'
   loadBtn.onclick = loadStored;
   addBtn.onclick = saveLink;
 }
@@ -127,6 +128,7 @@ function initInListPage() {
   addBtn.innerText = '返回';
   form.style.display = 'none';
   loadContainer.style.display = 'flex';
+  linkp.style.display = 'none'
   loadBtn.onclick = loadPage;
   addBtn.onclick = initInSavePage;
 }

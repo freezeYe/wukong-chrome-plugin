@@ -6,7 +6,7 @@
   "description": "Separate Domains and Parameters and Regroup",
   "permissions": ["storage", "declarativeContent", "activeTab", "tabs"],
   "browser_action": {
-    "default_popup": "popup.html",
+    "default_popup": "src/html/popup.html",
     "default_icon": "images/nokia_suite_mirror.png"
   },
   "icons": {
