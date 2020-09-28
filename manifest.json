@@ -15,5 +15,5 @@
     "48": "images/nokia_suite_mirror.png",
     "128": "images/nokia_suite_mirror.png"
   },
-  "options_page": "options.html"
+  "options_page": "src/html/options.html"
 }
