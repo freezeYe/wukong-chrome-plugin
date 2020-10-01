@@ -110,6 +110,7 @@ ul li {
   overflow-x: auto;
   font-size: 12px;
   margin-top: 4px;
+  white-space: nowrap;
 }
 ul li:hover {
   cursor: default;

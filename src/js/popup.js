@@ -11,9 +11,8 @@ const CACHED_KEY = '__wukongCache';
 let link = '';
 // 项目初始化，绑定相关事件
 const init = () => {
-  chrome.tabs.query({ active: true }, (tabs) => {
-    const [currentPage] = tabs;
-    const { url } = currentPage;
+  chrome.tabs.getSelected(null, function (tab) {　　// 先获取当前页面的tabID
+    const {url} = tab
     link = url;
     linkp.innerText = url;
   });
@@ -21,7 +20,7 @@ const init = () => {
 };
 
 // 保存链接
-function saveLink(link) {
+function saveLink() {
   // 命名字段
   const hostName = form.hostValue.value;
   const pathName = form.pathValue.value;
@@ -116,6 +115,7 @@ function loadPage() {
 function initInSavePage() {
   reminder.innerText = '';
   addBtn.innerText = '保存';
+  loadBtn.innerText = '访问'
   form.style.display = 'block';
   loadContainer.style.display = 'none';
   linkp.style.display = 'block';
@@ -127,6 +127,7 @@ function initInSavePage() {
 function initInListPage() {
   reminder.innerText = '';
   addBtn.innerText = '返回';
+  loadBtn.innerText = '打开'
   form.style.display = 'none';
   loadContainer.style.display = 'block';
   linkp.style.display = 'none';
