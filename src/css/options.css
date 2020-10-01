@@ -20,3 +20,56 @@ body {
 .header_logo {
   height: 60px;
 }
+
+.table {
+  table-layout: auto;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0,0,0,.85);
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
+  position: relative;
+  z-index: 0;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 2px;
+  width: 100%;
+}
+.table tbody {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.table tr td,th {
+  position: relative;
+  padding: 16px;
+  overflow-wrap: break-word;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: center;
+  overflow-x: auto;
+}
+.table thead {
+  background-color: #FAFAFA;
+}
+
+.table tr td:first-child,th:first-child {
+  width: 30%;
+}
+
+.table tr td:first-child,th:last-child {
+  width: 10%;
+}
+
+.container_selecter .title {
+  text-align: center;
+  margin: 20px 0 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+.delete {
+  cursor: pointer;
+  color: #FA541C;
+}
