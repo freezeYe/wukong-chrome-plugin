@@ -72,20 +72,32 @@ body {
   margin-bottom: 10px;
 }
 
-.list {
+.container-list {
+  display: flex;
+}
+
+.container-list .ul {
   min-height: 100px;
   max-height: 220px;
   flex-grow: 1;
   flex-shrink: 1;
   overflow: auto;
+  width: 33%;
 }
 
-.list .header {
+.header {
+  display: flex;
   margin-bottom: 8px;
   font-weight: bold;
   color: gray;
-  border: solid 1px gray;
-  text-align: center;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  border-bottom: 1px solid grey;
+}
+.header div {
+  width: 33%;
+  flex-grow: 1;
 }
 
 ul {
@@ -96,9 +108,17 @@ ul {
 ul li {
   list-style-type:none;
   overflow-x: auto;
+  font-size: 12px;
+  margin-top: 4px;
 }
 ul li:hover {
   cursor: default;
+}
+
+.radio {
+  margin-left: 0;
+  margin-right: 6px;
+  vertical-align: text-bottom;
 }
 
 .footer {

@@ -6,6 +6,8 @@ const linkp = document.getElementById('link-show');
 const reminder = document.getElementById('reminder');
 const loadContainer = document.getElementById('load-container');
 
+// storage 缓存键
+const CACHED_KEY = '__wukongCache'
 let link = '';
 // 项目初始化，绑定相关事件
 const init = () => {
@@ -34,10 +36,9 @@ function saveLink(link) {
   const args = href.split('/');
   const host = args.slice(0, 3).join('/');
   const path = args.slice(3).join('/');
-  // 存储key
-  const key = '__wukongCache';
-  chrome.storage.sync.get([key], (result) => {
-    const json = result[key] || {};
+
+  chrome.storage.sync.get([CACHED_KEY], (result) => {
+    const json = result[CACHED_KEY] || {};
     const { hostMap = {}, pathMap = {}, queryMap = {} } = json;
     if (hostName) hostMap[host] = hostName;
     if (pathName) pathMap[path] = pathName;
@@ -46,7 +47,7 @@ function saveLink(link) {
     json.hostMap = hostMap;
     json.pathMap = pathMap;
     json.queryMap = queryMap;
-    chrome.storage.sync.set({ [key]: json });
+    chrome.storage.sync.set({ [CACHED_KEY]: json });
     reminder.innerText = '保存成功!';
     reminder.style.color = 'green';
     setTimeout(() => {
@@ -61,7 +62,7 @@ function loadStored() {
   const childrenWrapper = (key, value, name) => {
     const id = name + count;
     count += 1;
-    return `<li><input type="radio" id=${id} name=${name} value=${key}><label for=${id}>${value}</label></input></li>`;
+    return `<li><input class="radio" type="radio" id=${id} name=${name} value=${key}><label for=${id}>${value}</label></input></li>`;
   };
   chrome.storage.sync.get(['__wukongCache'], (result) => {
     const hostContainer = document.getElementById('host-list');
@@ -81,9 +82,9 @@ function loadStored() {
     Object.keys(queryMap).forEach((querykey) => {
       queryHtml += childrenWrapper(querykey, queryMap[querykey], 'queryValue');
     });
-    hostContainer.innerHTML = `<li class="header">域名</li>${hostHtml}`;
-    pathContainer.innerHTML = `<li class="header">路径</li>${pathHtml}`;
-    queryContainer.innerHTML = `<li class="header">参数</li>${queryHtml}`;
+    hostContainer.innerHTML = `${hostHtml}`;
+    pathContainer.innerHTML = `${pathHtml}`;
+    queryContainer.innerHTML = `${queryHtml}`;
 
     initInListPage();
   });
@@ -127,7 +128,7 @@ function initInListPage() {
   reminder.innerText = '';
   addBtn.innerText = '返回';
   form.style.display = 'none';
-  loadContainer.style.display = 'flex';
+  loadContainer.style.display = 'block';
   linkp.style.display = 'none'
   loadBtn.onclick = loadPage;
   addBtn.onclick = initInSavePage;
