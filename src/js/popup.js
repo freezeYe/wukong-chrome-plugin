@@ -7,7 +7,7 @@ const reminder = document.getElementById('reminder');
 const loadContainer = document.getElementById('load-container');
 
 // storage 缓存键
-const CACHED_KEY = '__wukongCache'
+const CACHED_KEY = '__wukongCache';
 let link = '';
 // 项目初始化，绑定相关事件
 const init = () => {
@@ -118,7 +118,7 @@ function initInSavePage() {
   addBtn.innerText = '保存';
   form.style.display = 'block';
   loadContainer.style.display = 'none';
-  linkp.style.display = 'block'
+  linkp.style.display = 'block';
   loadBtn.onclick = loadStored;
   addBtn.onclick = saveLink;
 }
@@ -129,7 +129,7 @@ function initInListPage() {
   addBtn.innerText = '返回';
   form.style.display = 'none';
   loadContainer.style.display = 'block';
-  linkp.style.display = 'none'
+  linkp.style.display = 'none';
   loadBtn.onclick = loadPage;
   addBtn.onclick = initInSavePage;
 }
