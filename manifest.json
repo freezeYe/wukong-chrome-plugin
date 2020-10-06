@@ -1,16 +1,19 @@
 {
-  "name": "loader",
+  "name": "Domain and Parameter combination",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "悟空记录",
-  "permissions": ["storage", "declarativeContent", "activeTab"],
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
+  "author": "bohrzhang",
+  "description": "Separate Domains and Parameters and Regroup",
+  "permissions": ["storage", "declarativeContent", "activeTab", "tabs"],
   "browser_action": {
-    "default_popup": "popup.html",
+    "default_popup": "src/html/popup.html",
     "default_icon": "images/nokia_suite_mirror.png"
   },
-  "options_page": "options.html"
+  "icons": {
+    "16": "images/nokia_suite_mirror.png",
+    "32": "images/nokia_suite_mirror.png",
+    "48": "images/nokia_suite_mirror.png",
+    "128": "images/nokia_suite_mirror.png"
+  },
+  "options_page": "src/html/options.html"
 }

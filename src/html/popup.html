@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/popup.css">
+  </head>
+  <body>
+    <div class="app">
+      <p id="link-show" class="link-show"></p>
+      <div class="custom-form">
+        <form id="form">
+          <div class="form-item">
+            <span>Host: </span>
+            <input autocomplete="off" type="text" name="hostValue" autofocus></input>
+          </div>
+          <div class="form-item">
+            <span>Path: </span>
+            <input autocomplete="off" type="text" name="pathValue"></input>
+          </div>
+          <div class="form-item">
+            <span>Query: </span>
+            <input autocomplete="off" type="text" name="queryValue"></input>
+          </div>
+        </form>
+      </div>
+      <div class="load-container" id="load-container">
+        <div class="header">
+          <div>域名</div><div>路径</div><div>参数</div>
+        </div>
+        <div class="container-list">
+          <ul id="host-list" class="ul"></ul>
+          <ul id="path-list" class="ul"></ul>
+          <ul id="query-list" class="ul"></ul>
+      </div>
+      </div>
+      <div id="reminder" class="remind"></div>
+      <div class="operation">
+        <div id="add-btn" class="button add-btn">保存</div>
+        <div id="load-btn" class="button load-btn">访问</div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div id="autoOption"></div>
+      © <span id="year">2020</span> tnfe -
+        <a class="gtx-a" id="options-link" target="_blank" href="options.html">扩展程序选项</a> -
+        <a class="gtx-a" id="translate-link" target="_blank" href="https://github.com/tnfe">腾讯新闻</a>
+    </footer>
+    <script src="../js/popup.js"></script>
+  </body>
+</html>
