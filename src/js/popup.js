@@ -68,7 +68,7 @@ function loadStored() {
     const pathContainer = document.getElementById('path-list');
     const queryContainer = document.getElementById('query-list');
     const { __wukongCache = {} } = result;
-    const { hostMap, pathMap, queryMap } = __wukongCache;
+    const { hostMap = {}, pathMap = {}, queryMap = {} } = __wukongCache;
     let hostHtml = '';
     let pathHtml = '';
     let queryHtml = '';
