@@ -14,4 +14,4 @@
 
 ## 图解
 
-![1601523113_4_w1328_h822.png](/uploads/9F4AD7B3A1E9417785E0BA1921DC0C80/1601523113_4_w1328_h822.png)
+![1601523113_4_w1328_h822.png](https://github.com/freezeYe/assets/blob/master/wcp.png)
