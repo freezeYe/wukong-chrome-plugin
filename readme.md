@@ -1,4 +1,4 @@
-# Wukong-Chrome-Plugin
+# 悟空插件
 
 ## 概览
 
@@ -14,4 +14,6 @@
 
 ## 图解
 
-![1601523113_4_w1328_h822.png](https://github.com/freezeYe/assets/blob/master/wcp.png)
+<p align="center">
+  <img width="400px" src="https://github.com/freezeYe/assets/blob/master/wcp.png" />
+</p>
